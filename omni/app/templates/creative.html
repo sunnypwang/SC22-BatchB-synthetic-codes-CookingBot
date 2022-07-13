@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>NanoBytes</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap Icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Averia+Sans:400,700" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Averia:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+        <!-- SimpleLightbox plugin CSS-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{{ url_for('static',filename='/css/styles-creative.css') }}" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar2 navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+            <div class="container px-4 px-lg-3">
+                <a class="navbar-brand" href= "https://www.ai-camp.org"><img src="https://static.wixstatic.com/media/12b467_a4ceef0f338c41c7885cb083ea36a00f~mv2_d_1742_1743_s_2.png/v1/fill/w_68,h_68,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ai%20camp%20logo.png" alt="AI Camp Logo"></a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto my-2 my-lg-0">
+                        <li class="nav-item"><a class="nav-link" href={{ url_for('home')}}>Homepage</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                      <li class="nav-item"><a class="nav-link" href="#aboutus">Our Team</a></li>
+                      <li class="nav-item"><a class="nav-link" href={{ url_for('results')}}>Try The Model</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container px-4 px-lg-5 h-100">
+                <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                    <div class="col-lg-8 align-self-end">
+                        <h1 class="text-white font-weight-bold">NanoBytes</h1>
+                        <hr class="divider" />
+                    </div>
+                    <div class="col-lg-8 align-self-baseline">
+                        <p class="text-white-75 mb-5">An AI designed to help you reduce food waste, and make the most out of your ingredients.</p>
+                        <a class="btn btn-primary btn-xl" href="#about">Your New Cooking Companion</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="page-section bg-primary" id="about">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="text-white h2">Description</h2>
+                        <hr class="divider divider-light" />
+                        <p class="text-white-75 mb-4">        Our AI generates recipes based upon the ingredients that are inputted. For example, if you enter mushrooms and chicken into our model, it will generate a recipe that includes these two ingredients. Users can specify filters and categories for their recipe by picking from multiple drop-down menus. This system can help reduce food waste and find more food options for those with specific likes and needs with what they have available.
+</p>
+                        <a class="btn btn-light btn-xl" href={{ url_for('results')}}>Get Started!</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Portfolio-->
+        <section class="page-section bg-primary" id="about">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="text-white h2">Process</h2>
+                        <hr class="divider divider-light" />
+                        <p class="text-white-75 mb-4">        
+</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Portfolio-->
+        <div id="portfolio">
+            <div class="container-fluid p-0">
+                <div class="row g-0">
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="{{ url_for('static',filename='img/Screen Shot 2022-07-12 at 1.52.05 PM.png') }}" title="Project Name">
+                            <img class="img-fluid" src="{{ url_for('static',filename='img/Screen Shot 2022-07-12 at 1.52.05 PM.png') }}" alt="..." />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Step 1: Finding Data</div>
+                                <div class="project-name">
+We found a dataset on Kaggle that included 500,000 recipes from food.com with 300 categories.
+</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="{{ url_for('static',filename='img/Screen Shot 2022-07-12 at 2.52.51 PM.png') }}" title="Project Name">
+                            <img class="img-fluid" src="{{ url_for('static',filename='img/Screen Shot 2022-07-12 at 2.52.51 PM.png') }}" alt="..." />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Step 2: Pre-processing</div>
+                                <div class="project-name">
+                                  The Back-End team sorted data and deleted unneeded columns (AuthorID, AuthorName, etc.), cutting the data to 30,000. The rest of the data was sorted and filtered into categories. 
+                              </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="{{ url_for('static',filename='img/featured_image-2.jpg') }}" title="Project Name">
+                            <img class="img-fluid" src="{{ url_for('static',filename='img/featured_image-2.jpg') }}" alt="..." />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Step 3: Training</div>
+                                <div class="project-name">Downloaded
+and trained for the first time with 40,000 steps, cut the data to 50,000, sorting and filtering categories. Repeated with 50,000 instead of 30,000 and trained 66,000 steps in the AI.
+</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="{{ url_for('static',filename='img/Screen Shot 2022-07-13 at 10.12.39 AM.png') }}" title="Project Name">
+                            <img class="img-fluid" src="{{ url_for('static',filename='img/Screen Shot 2022-07-13 at 10.12.39 AM.png') }}" alt="..." />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Step 4: Website design</div>
+                                <div class="project-name">To design our website, we used a theme on Start Bootstrap that was similar to our intended design, so we adapted it to include all of our needed elements.</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="{{ url_for('static',filename='img/Screen Shot 2022-07-13 at 10.20.44 AM.png') }}" title="Project Name">
+                            <img class="img-fluid" src="{{ url_for('static',filename='img/Screen Shot 2022-07-13 at 10.20.44 AM.png') }}" alt="..." />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Step 5: Setting up the website</div>
+                                <div class="project-name">Making sure all the categories were included on the input page and reducing selection options on the drop down menu, which was a struggle and having an ingredient textbox.  Linking buttons and options together.</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="{{ url_for('static',filename='img/Screen Shot 2022-07-13 at 11.48.57 AM.png') }}" title="Project Name">
+                            <img class="img-fluid" src="{{ url_for('static',filename='img/Screen Shot 2022-07-13 at 11.48.57 AM.png') }}" alt="..." />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Step 6: Final Corrections and Presentation</div>
+                                <div class="project-name">We added finishing touches, ensured our model's functionality, and formatted our website to look presentable.</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!Team Section>
+    <br>
+    <br>
+    <br>
+    <br>
+        <header class="foodbackground">
+            <div class="container px-4 px-lg-5 h-100">
+                <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                    <div class="col-lg-8 align-self-end">
+      <center>
+      <section class="content-section" id="aboutus">
+            <div class="container px-4 px-lg-5">
+                <div class="content-section-heading text-center">
+                    <h2 class="text-white h2">The Team</h2>
+                </div>
+                </div>
+                  <br>
+    <br>
+    <br>
+                <div class="row gx-0">
+                   <div class="col-lg-4">
+                           <div class="whitecaption">
+                                <div class="caption-content">
+                             <img class="img-fluid" src="{{url_for('static',filename='img/isabela-modified.png')}}" alt="Isabela's Profile Picture" style="width:150px;height:150px;"/> 
+                                  <br><br><br>
+                                    <div class="text-white h3">Isabela Macias-Fraser</div>
+                                    <p class="text-white h5">Front-End Developer + Project Manager</p>
+                                    <p class="text-white">I'm Isabela, a rising 11th grader I'm a captain of the track and cross country teams at Encinal highschool.</p>
+                                </div>
+                            </div>
+                   </div>
+<br><br><br><br><br><br><br><br><br>
+
+                  <div class="col-lg-4">
+                            <div class="whitecaption">
+                                <div class="caption-content">
+                                            <img class="img-fluid" src="{{url_for('static',filename='img/justin-modified.png')}}" alt="Justin's Profile Picture" style="width:150px;height:150px;"/> 
+                                  <br><br><br>
+                                   <div class="text-white h3">Justin Wu</div>
+                                    <p class="text-white h5">Back-End Developer</p>
+                                    <p class= 'text-white'>I am Justin Wu, a rising 9th grader! I enjoy swimming!</p>
+                                </div>
+                            </div>
+                    </div>
+<br><br><br><br><br><br><br><br><br>
+                  <div class="col-lg-4">
+                            <div class="whitecaption">
+                                <div class="caption-content">
+                                     <img class="img-fluid" src="{{url_for('static',filename='img/me-modified.png')}}" alt="Justin's Profile Picture" style="width:150px;height:150px;"/> 
+                                  <br><br><br>
+                                    <div class="text-white h3">Lucy Zhao</div>
+                                    <p class="text-white h5">Front-End Developer</p>
+                                   <p class= "text-white">My name is Lucy Zhao, and I enjoy music, sports, and hanging out with friends in my free time!</p>
+                                </div>
+                            </div>
+                    </div>
+<br><br><br><br><br><br><br><br><br>
+                    <div class="col-lg-4">
+                            <div class="whitecaption">
+                                <div class="caption-content">
+                                  <img class="img-fluid" src="{{url_for('static',filename='img/thomas.png')}}" alt="Phakawat Profile Picture" style="width:150px;height:150px;"/>
+        <br><br><br>
+                                    <div class="text-white h3">Thomas Ogi</div>
+                                    <p class="text-white h5">Back-End Developer</p>
+                                    <p class= "text-white">I'm Thomas, an incoming freshman and sports enthusiast.</p>
+                                </div>
+                            </div>
+                    </div>
+<br><br><br><br><br><br><br><br><br>
+
+                  <div class="col-lg-4">
+                            <div class="whitecaption">
+                                <div class="caption-content">
+                                        <img class="img-fluid" src="{{url_for('static',filename='img/gigie-modified.png')}}" alt="Gigie's Profile Picture" style="width:150px;height:150px;"/> 
+                                  <br><br><br>
+                                    <div class="text-white h3">Gigie Le</div>
+                                    <p class="text-white h5">Front-End Developer</p>
+                                    <p class= "text-white"> i am gigie le, a #07 and i like cats</p>
+                                </div>
+                            </div>
+                    </div>
+<br><br><br><br><br><br><br><br><br>
+                    <div class="col-lg-4">
+                            <div class="whitecaption">
+                                <div class="caption-content">
+                                    <div class="text-white h3">Om Mahalingham</div>
+                                    <p class="text-white h5">Back-End Developer</p>
+                                    <p class= "text-white">I am Om Mahalingam a rising 8th grader! I enjoy playing sports and video games.</p>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+<img class="img-fluid" src="{{url_for('static',filename='img/phakawat-modified.png')}}" alt="Phakawat Profile Picture" style="width:150px;height:150px;"/>
+        <br><br><br>
+        <div class="col-lg-4">
+                            <div class="whitecaption">
+                                <div class="caption-content">
+                                   <div class="text-white h3">Phakawat Wangkriangkri</div>
+                                    <p class="text-white h5">Our Amazing Instructor</p>
+                                  <p class="text-white">I am Phakawat, a graduate student! I enjoy playing video games!</p>
+                                </div>
+                            </div>
+                    </div>
+        </section>
+      </center>
+        <!-- Footer-->
+<br><br>
+            <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2022 - AI Camp Synthetic Codes NLP</div></div>
+
+              <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- SimpleLightbox plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{{ url_for('static',filename='/js/scripts-creative.js') }}"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html>
+
