@@ -78,7 +78,7 @@ def generate_text():
 [Category]
 {category}
 '''
-#     ingredients = ingredients.split()
+    ingredients = ingredients.lower()
     ingredients = f'''[Ingredients]
 {ingredients}'''
     prompt = f'''{category}\n{ingredients}'''
