@@ -20,16 +20,17 @@
     </head>
     <body id="page-top">
         <!-- Navigation-->
-        <nav class="navbar2 navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+        <nav class="navbar2 navbar-expand-lg navbar-light fixed-top py-2" id="mainNav">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href= "https://www.ai-camp.org"><img src="https://static.wixstatic.com/media/12b467_a4ceef0f338c41c7885cb083ea36a00f~mv2_d_1742_1743_s_2.png/v1/fill/w_68,h_68,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ai%20camp%20logo.png"></a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
+                               <a class="navbar-brand" href="https://www.ai-camp.org"><img alt=
+        "AI Camp Logo" src= "https://static.wixstatic.com/media/12b467_a4ceef0f338c41c7885cb083ea36a00f~mv2_d_1742_1743_s_2.png/v1/fill/w_68,h_68,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ai%20camp%20logo.png" style="width:75px;height:75px;">     </a>
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
                         <li class="nav-item"><a class="nav-link" href={{ url_for('home')}}>Homepage</a></li>
                         <li class="nav-item"><a class="nav-link" href={{ url_for('home', _anchor='about')}}>About</a></li> 
-                      <li class="nav-item"><a class="nav-link" href={{ url_for('results')}}>Try The Model</a></li>
                       <li class="nav-item"><a class="nav-link"href ={{ url_for('home', _anchor='aboutus')}}>Our Team</a></li>
+                      <li class="nav-item"><a class="nav-link" href={{ url_for('results')}}>Try The Model</a></li>
+                      
                         
                     </ul>
                 </div>
@@ -40,7 +41,7 @@
             <div class="container px-4 px-lg-5 h-100">
                 <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                     <div class="col-lg-8 align-self-end">
-                        <h1 class="text-white font-weight-bold">NanoBytes</h1>
+                        <h1 class="text-white font-weight-bold baguette">NanoBytes</h1>
                         <hr class="divider" />
                     </div>
                     <div class="col-lg-8 align-self-baseline">
@@ -54,19 +55,19 @@
         <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-lg-8 text-center">
-                        <h2 class="text-white mt-0">Generate your recipe</h2>
+                        <h2 class="text-white mt-0 recipe-font">Generate your recipe</h2>
                         <hr class="divider divider-light" />
                         <p class="text-white-75 mb-4">
                     <div  class="container px-4 px-lg-5">
-         <p class="lead mb-5"><strong>Select the options that apply to what you want based on these categories</strong></p>
+         <p class="font"><strong>Select the options that apply to what you want based on these categories</strong></p>
                      <!--input--> 
-                        <form action="{{url_for('generate_text')}}" method="POST" source="custom" name="form-1" >
+                        <form action="{{url_for('generate_text')}}" method="POST" source="custom" name="form-1">
                           <div class="form-group">
 
 
-<!-- <option selected disabled>Choose Tagging</option> -->
-<select name="Category" id="Main_Category" onchange = "myFunction()">
-  <option selected disabled>Select a category</option>
+<!-- <label class="text-white h6">Category</label> -->
+<select name="Category" id="Main_Category" onchange = "myFunction()" class="my-custom-select i-going-crazy">
+  <option value="" selected disabled>Select a category</option>
   <option value="Fruit">Fruit</option>
   <option value="Meat">Meat</option>
   <option value="Seafood">Seafood</option>
@@ -80,12 +81,12 @@
 </select>
                             
                           
-<select name="category_input" id="Category_secondary" class="hidden">
+<select name="category_input" id="Category_secondary"  required class="my-custom-select hidden i-going-crazy">
 </select>
 
 
 <select name="Time" id="Time" class="hidden">
-  <option selected disabled>Select a time</option>
+  <option value="" selected disabled>Select a time</option>
   <option value="<15mins">Less than 15 mins</option>
   <option value="<30mins">Less than 30 mins</option>
   <option value="<60mins">Less than 60 mins</option>
@@ -93,10 +94,8 @@
 </select>
 
 
-
-
 <select name="Meat" id="Meat" class="hidden">
-  <option selected disabled>Select a meat</option>
+  <option value="" selected disabled>Select a meat</option>
   <option value="Whole Turkey">Whole Turkey</option>
   <option value="Whole Chicken">Whole Chicken</option>
   <option value="Steak">Steak</option>
@@ -112,7 +111,7 @@
 
 
 <select name="Fruit" id="Fruit" class="hidden">
-  <option selected disabled>Select a fruit</option>
+  <option value="" selected disabled>Select a fruit</option>
   <option value="Mango">Mango</option>
   <option value="Apple">Apple</option>
   <option value="Avocado">Avocado</option>
@@ -128,7 +127,7 @@
 
 
 <select name="Culture" id="Culture" class="hidden">
-  <option selected disabled>Select a culture</option>
+  <option value="" selected disabled>Select a culture</option>
   <option value="Chinese">Chinese</option>
   <option value="Vietnamese">Vietnamese</option>
   <option value="Thai">Thai</option>
@@ -144,7 +143,7 @@
 
 
 <select name="Other" id="Other" class="hidden">
-  <option selected disabled>Select other option</option>
+  <option value="" selected disabled>Select other option</option>
   <option value="Tempeh">Tempeh</option>
   <option value="Stir Fry">Stir Fry</option>
   <option value="Soy/Tofu">Soy/Tofu</option>
@@ -164,7 +163,7 @@
 
 
 <select name="Dessert" id="Dessert" class="hidden">
-  <option selected disabled>Select a dessert</option>
+  <option value="" selected disabled>Select a dessert</option>
   <option value="Tarts">Tarts</option>
   <option value="Scones">Scones</option>
   <option value="Savory Pies">Savory Pies</option>
@@ -177,7 +176,7 @@
 </select>
 
 <select name="Starches" id="Starches" class="hidden">
-  <option selected disabled>Select a starch</option>
+  <option value="" selected disabled>Select a starch</option>
   <option value="Brown Rice">Brown Rice</option>
   <option value="White Rice">White Rice</option>
   <option value="Spaghetti">Spaghetti</option>
@@ -191,7 +190,7 @@
 </select>
 
 <select name="Beverages" id="Beverages" class="hidden">
-  <option selected disabled>Select a beverage</option>
+  <option value="" selected disabled>Select a beverage</option>
   <option value="Smoothies">Smoothies</option>
   <option value="Shakes">Shakes</option>
   <option value="Punch Beverage">Punch Beverage</option>
@@ -200,7 +199,7 @@
 
 
 <select name="Vegetables" id="Vegetables" class="hidden" >
-  <option selected disabled>Select a vegetable</option>
+  <option value="" selected disabled>Select a vegetable</option>
   <option value="Vegatable">Vegetable</option>
   <option value="Vegan">Vegan</option>
   <option value="Spinach">Spinach</option>
@@ -216,7 +215,7 @@
 
 
 <select name="Seafood" id="Seafood" class="hidden">
-  <option selected disabled>Select a seafood option</option>
+  <option value="" selected disabled>Select a seafood option</option>
   <option value="Crab">Crab</option>
   <option value="Tuna">Tuna</option>
   <option value="Mussels">Mussels</option>
@@ -230,15 +229,25 @@
   <option value="Squid">Squid</option>
 </select>
 </div>
+                          <br>
                           <div class="form-group">
-                            <textarea class="form-control-lg" rows="4" cols="50" placeholder="Write ingredients here..." required="" id="text_gen_input" name="ingredients_input"></textarea>
+                            <textarea class="form-control-lg i-going-crazy" rows="4" cols="50" placeholder="Write ingredients here..." required="" id="text_gen_input" name="ingredients_input"></textarea>
                           </div>
+                          <br>
                           <div class="form-group">
-                            <button type="submit" class="btn btn-light" id="text_gen_button" onclick="loading()">Start Cooking!</button>
+                            <button type="submit" class="btn btn-light i-going-crazy" id="text_gen_button" onclick="loading()">Start Cooking!</button>
                             <script>
                               function loading() {
-                                secondary = document.getElementById("CircleLoading");
-                                secondary.classList.remove("hidden");
+                                circle = document.getElementById("CircleLoading");
+                                ingredients = document.getElementById("text_gen_input").value;
+                                category = document.getElementById("Category_secondary").value;
+                                console.log(ingredients)
+                                console.log(category)
+                                if (category != "" && ingredients != ""){
+                                  circle.classList.remove("hidden");
+                                }
+                                
+//                                 document.getElementById("results_section").classList.remove("hidden");
                               }
                             </script>
                           </div>
@@ -250,12 +259,14 @@
                         <br>
                     </div>
                       </div>
-                   <div class="col-lg-8">
-                     <center><h2 class="text-light">Recipe:</h2></center>
-                      <ul id="generated_ul">
+                   <div id="results_section">
+                     <center ><h2 class="text-light recipe-font">Recipe:</h2></center>
+                      <ul id="generated_ul" >
                         <center>
-                          <p style="white-space: pre-line; font-family: "Times New Roman";" class="text-white">{{ generated }}
+
+                        <p class="recipe text-white">{{ generated }}
                         </p>
+
                         </center>
                       </ul>
                   </div>

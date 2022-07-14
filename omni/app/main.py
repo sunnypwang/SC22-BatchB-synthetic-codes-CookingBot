@@ -6,9 +6,9 @@
 """
     Bonus points if you want to have internship at AI Camp
     1. How can we save what user built? And if we can save them, like allow them to publish, can we load the saved results back on the home page? 
-    2. Can you add a button for each generated item at the frontend to just allow that item to be added to the story that the user is building? 
-    3. What other features you'd like to develop to help AI write better with a user? 
-    4. How to speed up the model run? Quantize the model? Using a GPU to run the model? 
+    2. Can you add a button for each generated item at the frontend to just allow that item to be added to the story that the user is building?
+    3. What other features you'd like to develop to help AI write better with a user?
+    4. How to speed up the model run? Quantize the model? Using a GPU to run the model?
 """
 
 # import basics
@@ -57,13 +57,10 @@ def home_post():
 def results():
     if 'data' in session:
         data = session['data']
+        del session['data']
         return render_template('Cookingbotmodel.html', generated=data)
     else:
-        return render_template('Cookingbotmodel.html', generated=None)
-    
-    
-    
-
+        return render_template('Cookingbotmodel.html', generated="")
 
 @app.route(f'{base_url}/generate_text/', methods=["POST"])
 def generate_text():
@@ -71,7 +68,7 @@ def generate_text():
     view function that will return json response for generated text.
     """
     #WHY DID THE BICYCLE STOP? BECAUSE IT WAS TOO(TWO) TIRED!!!!!!!!!!!!
-    ingredients = request.form['ingredients_input']  
+    ingredients = request.form['ingredients_input']
     category = request.form['category_input']
 #     print(ingredients, category)
     category = f'''
@@ -80,7 +77,8 @@ def generate_text():
 '''
     ingredients = ingredients.lower()
     ingredients = f'''[Ingredients]
-{ingredients}'''
+{ingredients}
+'''
     prompt = f'''{category}\n{ingredients}'''
 #     print(prompt)
     if prompt is not None:
@@ -89,7 +87,9 @@ def generate_text():
                                 prompt=str(prompt),
                                 max_length=300,
                                 temperature=0.9,
-                                return_as_list=True)
+                                return_as_list=True,
+                                seed=250)
+    
 #     generated[0].replace('\n', '<br>')
     data = {'generated_ls': generated}
     session['data'] = generated[0]
